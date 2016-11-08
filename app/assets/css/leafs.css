@@ -1,0 +1,48 @@
+/* leafs */
+.leafs {
+  position: absolute;
+  z-index: 101;
+  display: flex;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  /*
+  animation-name: leafMove;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  */
+}
+.leafs img {
+  height: 100%;
+  width: auto;
+}
+.leafs.home {
+  width: auto;
+  height: 100%;
+}
+.leafs.home.top {
+  right: 0px;
+  top: 0px;
+}
+.leafs.home.bottom {
+  right: 0px;
+  bottom: 0px;
+}
+.leafs.design.left {
+  left: 0px;
+  top: 0px;
+}
+.leafs.contact {
+  width: auto;
+  height: 100%;
+}
+.leafs.contact.bottom {
+  bottom: 0px;
+}
+.leafs.contact.bottom.right {
+  right: 0px;
+  bottom: -250px;
+}
+.leafs.contact.bottom.left {
+  left: 0px;
+}

@@ -1,0 +1,59 @@
+.slider-main {
+  width: 100%;
+  height: 100%;
+  /*
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  */
+  display: block;
+  position: relative;
+  overflow-x: none;
+}
+.slider-main.js-on {
+  overflow-x: hidden;
+}
+
+.slider-main {
+  height: 200vh;
+}
+
+element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#iphone {
+  position: fixed;
+  width: 200px;
+  height: auto;
+  top: calc(50% - 402px/2);
+  left: calc(50% - 100px);
+  /*background-image: url('../../assets/img/iphone.png');*/
+}
+#iphone img {
+  width: 100%;
+}
+#iphone.covered {
+  position: absolute;
+  top: 100vh;
+}
+
+#case {
+  opacity: 1.0;
+  width: calc(200px + 11px);
+  height: auto;
+  /* top: calc(calc(50% - 402px/2) - 7px); case on element */
+  top: calc(100vh - 7px);
+  left: calc(50% - 100px - 6px);
+  /*background-image: url('../../assets/img/iphone.png');*/
+}
+#case img {
+  width: 100%;
+}

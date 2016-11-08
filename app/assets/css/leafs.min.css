@@ -1,0 +1,1 @@
+.leafs img,.leafs.contact,.leafs.home{width:auto;height:100%}.leafs{position:absolute;z-index:101;display:flex;background-size:auto 100%;background-repeat:no-repeat}.leafs.home.top{right:0;top:0}.leafs.home.bottom{right:0;bottom:0}.leafs.design.left{left:0;top:0}.leafs.contact.bottom{bottom:0}.leafs.contact.bottom.right{right:0;bottom:-250px}.leafs.contact.bottom.left{left:0}
