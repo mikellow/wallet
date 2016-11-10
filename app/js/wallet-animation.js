@@ -15,43 +15,6 @@
         'element': document.getElementById('case')
     };
 
-
-
-    /*
-    var activeSlideIndex = 0
-    var activeSlide = slides[activeSlideIndex];
-    var singleSlideWidth = activeSlide.getBoundingClientRect().width
-    */
-
-    /*
-    var model = {
-        slides : slides,
-        slidesList : slidesList,
-        activeSlideIndex : activeSlideIndex,
-        singleSlideWidth : singleSlideWidth
-    }
-
-    function moveRight () {
-        if(model.activeSlideIndex < (model.slides.length-1)) {
-            model.activeSlideIndex++;
-            console.log('moveRight now',model.activeSlideIndex);
-            var transformValue = model.activeSlideIndex * model.singleSlideWidth * -1;
-            console.log('transformValue', transformValue);
-            model.slidesList.style.webkitTransform = 'translate('+ transformValue +'px)';
-        }
-    }
-
-    function moveLeft () {
-        if(model.activeSlideIndex > 0) {
-            model.activeSlideIndex--;
-            console.log('moveRight now');
-            var transformValue = model.activeSlideIndex * model.singleSlideWidth * -1;
-            console.log('transformValue', transformValue);
-            model.slidesList.style.webkitTransform = 'translate('+ transformValue +'px)';
-        }
-    }
-    */
-
     function makeIphoneCovered() {
         if (iphone.covered) {
             console.log('already covered');
