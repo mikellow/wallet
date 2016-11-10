@@ -54,16 +54,17 @@ $mainCardWidth: 300px;
 
 $mainCardLeftPos : calc(30% - #{$mainCardWidth}/2);
 
-
-
 $iphoneTop: calc(50vh - #{$mainCardHeight}/2);
 
 $cardsInsideWalletTop: calc(#{$iphoneTop} + 100vh);
+
 $caseTop: calc(#{$iphoneTop} - 5px + 100vh);
 $caseTopFixed: calc(#{$iphoneTop} - 5px);
 
 $caseWidth : calc(#{$mainCardWidth} + 40px);
-$caseTopLeftPos : calc(#{$mainCardLeftPos} - 16px);
+$caseHeight : 685px;
+$caseLeftPos : calc(#{$mainCardLeftPos} - 16px);
+
 
 $card1SlideOut : -50px;
 $card2SlideOut : $card1SlideOut - 10px;
@@ -75,7 +76,32 @@ $card6SlideOut : $card1SlideOut - 50px;
 $cardSlideOutHover : $card1SlideOut - 150px;
 
 
+$toBottomCards : calc(#{$iphoneTop});
+$toBottomCase : calc(#{$iphoneTop} - 200px);
 
+// $toBottomCardsMobile : $toBottomCards;
+
+
+
+$mainCardHeightMobile: calc(#{$mainCardHeight}/2);
+$mainCardWidthMobile: calc(#{$mainCardWidth}/2);
+$mainCardTopPosMobile: calc(50vh - #{$mainCardHeightMobile}/2);
+
+
+$caseHeightMobile: calc(#{$caseHeight}/2);
+$caseWidthMobile: calc(#{$caseWidth}/2);
+$caseTopPosMobile: calc(#{$mainCardTopPosMobile} - 5px + 100vh);
+
+
+$mainCardLeftPosMobile : calc(50% - #{$mainCardWidth}/2);
+$caseLeftPosMobile :calc(#{$mainCardLeftPosMobile} - 8px);
+$cardsInsideWalletTopMobile : calc(#{$mainCardTopPosMobile} + 100vh);
+
+// $caseTopFixedMobile : calc(#{$mainCardTopPosMobile} - 5px);
+$caseTopFixedMobile : calc(#{$mainCardTopPosMobile} - 5px);
+// $toBottomCaseMobile :  calc(#{$mainCardTopPosMobile} - 200px);
+$toBottomCardsMobile : calc(#{$mainCardTopPosMobile});
+$toBottomCaseMobile :  calc(#{$mainCardTopPosMobile} - 100px);
 
 element.card {
     position: absolute;
@@ -99,6 +125,8 @@ element.card {
         transform: translateY($cardSlideOutHover) !important;
     }
 
+
+
 }
 
 element.other-cards {
@@ -112,6 +140,12 @@ element.other-cards {
     &.covered {
         position: fixed;
         top: $iphoneTop;
+
+        &.toBottom {
+            position: absolute;
+            top: inherit;
+            bottom: $toBottomCardsMobile;
+        }
     }
 
 
@@ -123,6 +157,12 @@ element.other-cards {
     &.covered {
         /*position: absolute;*/
         top: $iphoneTop;
+
+        &.toBottom {
+            position: absolute;
+            top: inherit;
+            bottom: $toBottomCards;
+        }
     }
     &.slide-out {
         -ms-transform: translateY($card1SlideOut); /* IE 9 */
@@ -177,23 +217,93 @@ element.other-cards {
 }
 
 #case {
-    opacity: 1.0;
+    opacity: 0.5;
     width: $caseWidth;
-    height: auto;
+    height: $caseHeight;
 
     position: absolute;
     /* top: calc(#{$iphoneTop} - 7px); case on element */
     // top: calc(100vh - 7px);
     top: $caseTop;
-    left: $caseTopLeftPos;
+    left: $caseLeftPos;
     z-index: 507;
     /*background-image: url('../../assets/img/iphone.png');*/
     img {
         width: 100%;
+        height: 100%;
     }
 
     &.covered {
         position: fixed;
         top: $caseTopFixed;
+
+        &.toBottom {
+            position: absolute;
+            top: inherit;
+            bottom: $toBottomCase;
+        }
+    }
+
+
+}
+
+
+@media all and (max-width: 699px) {
+    element.card,
+    element.other-cards {
+        position: absolute;
+
+        width: $mainCardWidthMobile;
+        height: $mainCardHeightMobile;
+        top: $cardsInsideWalletTopMobile;
+        left: $mainCardLeftPosMobile;
+
+        &.covered {
+            position: fixed;
+            top: $mainCardTopPosMobile !important;
+
+            &.toBottom {
+                position: absolute;
+                top: inherit !important;
+                bottom: $toBottomCardsMobile;
+            }
+        }
+    }
+
+    #card-1 {
+        position: fixed;
+        width: $mainCardWidthMobile;
+        height: $mainCardHeightMobile;
+        top: $mainCardTopPosMobile;
+        left: $mainCardLeftPosMobile;
+
+        &.covered {
+            position: fixed;
+            top: $mainCardTopPosMobile !important;
+
+            &.toBottom {
+                position: absolute;
+                top: inherit !important;
+                bottom: $toBottomCardsMobile;
+            }
+        }
+    }
+
+    #case {
+        width: $caseWidthMobile;
+        height: $caseHeightMobile;
+        top: $caseTopPosMobile;
+        left: $caseLeftPosMobile;
+
+        &.covered {
+            position: fixed;
+            top: $caseTopFixedMobile;
+
+            &.toBottom {
+                position: absolute;
+                top: inherit !important;
+                bottom: $toBottomCaseMobile;
+            }
+        }
     }
 }

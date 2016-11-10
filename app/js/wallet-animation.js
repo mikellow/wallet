@@ -25,7 +25,8 @@
 
     var walletCase = {
         'element': document.getElementById('case'),
-        'covered ': false
+        'covered ': false,
+        'attachedToBottom': false
     };
 
     function coverOtherCards () {
@@ -55,7 +56,7 @@
     function makeCardsCovered() {
         console.log('makeCardsCovered', cardMainElement.covered);
         if (cardMainElement.covered) {
-            //console.log('already covered');
+            ////console.log('already covered');
             return;
         } else {
             cardMainElement.covered = true;
@@ -69,7 +70,7 @@
     function makeCardsFixed () {
         console.log('makeCardsFixed', cardMainElement.covered);
         if (!cardMainElement.covered) {
-            //console.log('already fixed');
+            ////console.log('already fixed');
             return;
         } else {
             cardMainElement.covered = false;
@@ -82,7 +83,7 @@
     function makeWalletFixed () {
         console.log('makeWalletFixed', walletCase.covered);
         if (walletCase.covered) {
-            console.log('already fixed');
+            //console.log('already fixed');
             return;
         } else {
             walletCase.covered = true;
@@ -94,7 +95,7 @@
     function makeWalletMoving() {
         console.log('makeWalletMoving', walletCase.covered);
         if (!walletCase.covered) {
-            console.log('already moving');
+            //console.log('already moving');
             return;
         } else {
             walletCase.covered = false;
@@ -114,6 +115,47 @@
         cardMainElement.slideOut = false;
         cardMainElement.element.classList.remove("slide-out");
         slideOtherCardsIn();
+    }
+
+    function attachAllToBottom(){
+        attachWalletToBottom ();
+        attachCardsToBottom ();
+    }
+
+    function unattachAllFromBottom(){
+        unattachWalletFromBottom();
+        unattachCardsFromBottom();
+    }
+
+    function attachWalletToBottom (){
+        if (walletCase.attachedToBottom) {
+            return;
+        } else {
+            walletCase.element.classList.add("toBottom");
+        }
+    }
+
+    function unattachWalletFromBottom(){
+        walletCase.element.classList.remove("toBottom");
+        if (!walletCase.attachedToBottom) {
+            return;
+        } else {
+            walletCase.element.classList.remove("toBottom");
+        }
+    }
+
+    function attachCardsToBottom (){
+        cardMainElement.element.classList.add("toBottom");
+        for(var i = 0 ; i < otherCards.length; i++){
+            otherCards[i].classList.add("toBottom");
+        }
+    }
+
+        function unattachCardsFromBottom (){
+        cardMainElement.element.classList.remove("toBottom");
+        for(var i = 0 ; i < otherCards.length; i++){
+            otherCards[i].classList.remove("toBottom");
+        }
     }
 
 
@@ -179,6 +221,7 @@
                     model.currentStage == 0;
                     makeCardsFixed();
                     makeWalletMoving();
+                    slideCardsIn();
                 }
                 break;
             case 1 :
@@ -187,14 +230,19 @@
                     model.currentStage == 1;
                     makeCardsCovered();
                     makeWalletFixed();
-                    slideCardsIn();
+                    slideCardsOut();
+                    unattachAllFromBottom();
+                    //slideCardsIn();
+                    // if(walletCase.attachedToBottom){
+                    //     unattachWalletFromBottom();
+                    // }
                 }
                 break;
             case 2 :
                 console.log('activate stage 2');
                 if(model.currentStage !== 2){
                     model.currentStage == 2;
-                    slideCardsOut();
+                    attachAllToBottom();
                 }
                 break;
         }

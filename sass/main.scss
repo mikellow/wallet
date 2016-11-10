@@ -59,6 +59,7 @@ h2, h3 {
     position: relative;
 
     &.full-page {
-        height: 100%;
+        min-height: 100%;
+        height: auto;
     }
 }
