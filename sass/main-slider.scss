@@ -1,3 +1,10 @@
+.controlls {
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 999;
+}
+
 .slider-main {
     &.js-on {
         overflow-x: hidden;
@@ -61,7 +68,7 @@
 
 
 .slider-main {
-    height: 200vh;
+    height: 300vh;
 }
 element {
     position: absolute;
@@ -76,26 +83,111 @@ element {
     background-repeat: no-repeat;
 }
 
-$iphoneHeight: 402px;
+$iphoneHeight: 318px;
 $iphoneWidth: 200px;
 
-$iphoneTop: calc(50% - #{$iphoneHeight}/2);
+$iphoneTop: calc(50vh - #{$iphoneHeight}/2);
 
-#iphone {
-    position: fixed;
+$cardsInsideWalletTop: calc(#{$iphoneTop} + 100vh);
+$coverTop: calc(#{$iphoneTop} - 7px + 100vh);
+$coverTopFixed: calc(#{$iphoneTop} - 7px);
+
+$card1SlideOut : -50px;
+$card2SlideOut : $card1SlideOut - 10px;
+$card3SlideOut : $card1SlideOut - 20px;
+$card4SlideOut : $card1SlideOut - 30px;
+$card5SlideOut : $card1SlideOut - 40px;
+$card6SlideOut : $card1SlideOut - 50px;
+
+
+element.card {
+    position: absolute;
     width: $iphoneWidth;
-    height: auto;
+    height: $iphoneHeight;
 
     top: $iphoneTop;
     left: calc(50% - 100px);
-    /*background-image: url('../../assets/img/iphone.png');*/
+
     img {
         width: 100%;
     }
 
+
+    -webkit-transition: transform 1s; /* Safari */
+    transition: transform 1s;
+
+}
+
+element.other-cards {
+    position: absolute;
+    top: $cardsInsideWalletTop;
+
+    -ms-transform: translateY(0); /* IE 9 */
+    -webkit-transform: translateY(0); /* Chrome, Safari, Opera */
+    transform: translateY(0);
+
     &.covered {
-        position: absolute;
-        top: 100vh;
+        position: fixed;
+        top: $iphoneTop;
+    }
+}
+
+#card-1 {
+    position: fixed;
+    z-index: 506;
+    &.covered {
+        /*position: absolute;*/
+        top: $iphoneTop;
+    }
+    &.slide-out {
+        -ms-transform: translateY($card1SlideOut); /* IE 9 */
+        -webkit-transform: translateY($card1SlideOut); /* Chrome, Safari, Opera */
+        transform: translateY($card1SlideOut);
+    }
+}
+
+#card-2 {
+    z-index: 505;
+    &.slide-out {
+        -ms-transform: translateY($card2SlideOut); /* IE 9 */
+        -webkit-transform: translateY($card2SlideOut); /* Chrome, Safari, Opera */
+        transform: translateY($card2SlideOut);
+    }
+}
+
+#card-3 {
+    z-index: 504;
+    &.slide-out {
+        -ms-transform: translateY($card3SlideOut); /* IE 9 */
+        -webkit-transform: translateY($card3SlideOut); /* Chrome, Safari, Opera */
+        transform: translateY($card3SlideOut);
+    }
+}
+
+#card-4 {
+    z-index: 503;
+    &.slide-out {
+        -ms-transform: translateY($card4SlideOut); /* IE 9 */
+        -webkit-transform: translateY($card4SlideOut); /* Chrome, Safari, Opera */
+        transform: translateY($card4SlideOut);
+    }
+}
+
+#card-5 {
+    z-index: 502;
+    &.slide-out {
+        -ms-transform: translateY($card5SlideOut); /* IE 9 */
+        -webkit-transform: translateY($card5SlideOut); /* Chrome, Safari, Opera */
+        transform: translateY($card5SlideOut);
+    }
+}
+
+#card-6 {
+    z-index: 501;
+    &.slide-out {
+        -ms-transform: translateY($card6SlideOut); /* IE 9 */
+        -webkit-transform: translateY($card6SlideOut); /* Chrome, Safari, Opera */
+        transform: translateY($card6SlideOut);
     }
 }
 
@@ -104,11 +196,19 @@ $iphoneTop: calc(50% - #{$iphoneHeight}/2);
     width: calc(#{$iphoneWidth} + 11px);
     height: auto;
 
+    position: absolute;
     /* top: calc(#{$iphoneTop} - 7px); case on element */
-    top: calc(100vh - 7px);
+    // top: calc(100vh - 7px);
+    top: $coverTop;
     left: calc(50% - 100px - 6px);
+    z-index: 507;
     /*background-image: url('../../assets/img/iphone.png');*/
     img {
         width: 100%;
+    }
+
+    &.covered {
+        position: fixed;
+        top: $coverTopFixed;
     }
 }

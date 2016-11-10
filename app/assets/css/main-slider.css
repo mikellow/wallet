@@ -1,3 +1,10 @@
+.controlls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
 .slider-main {
   width: 100%;
   height: 100%;
@@ -15,7 +22,7 @@
 }
 
 .slider-main {
-  height: 200vh;
+  height: 300vh;
 }
 
 element {
@@ -29,31 +36,120 @@ element {
   background-repeat: no-repeat;
 }
 
-#iphone {
-  position: fixed;
+element.card {
+  position: absolute;
   width: 200px;
-  height: auto;
-  top: calc(50% - 402px/2);
+  height: 318px;
+  top: calc(50vh - 318px/2);
   left: calc(50% - 100px);
-  /*background-image: url('../../assets/img/iphone.png');*/
+  -webkit-transition: transform 1s;
+  /* Safari */
+  transition: transform 1s;
 }
-#iphone img {
+element.card img {
   width: 100%;
 }
-#iphone.covered {
+
+element.other-cards {
   position: absolute;
-  top: 100vh;
+  top: calc(calc(50vh - 318px/2) + 100vh);
+  -ms-transform: translateY(0);
+  /* IE 9 */
+  -webkit-transform: translateY(0);
+  /* Chrome, Safari, Opera */
+  transform: translateY(0);
+}
+element.other-cards.covered {
+  position: fixed;
+  top: calc(50vh - 318px/2);
+}
+
+#card-1 {
+  position: fixed;
+  z-index: 506;
+}
+#card-1.covered {
+  /*position: absolute;*/
+  top: calc(50vh - 318px/2);
+}
+#card-1.slide-out {
+  -ms-transform: translateY(-50px);
+  /* IE 9 */
+  -webkit-transform: translateY(-50px);
+  /* Chrome, Safari, Opera */
+  transform: translateY(-50px);
+}
+
+#card-2 {
+  z-index: 505;
+}
+#card-2.slide-out {
+  -ms-transform: translateY(-60px);
+  /* IE 9 */
+  -webkit-transform: translateY(-60px);
+  /* Chrome, Safari, Opera */
+  transform: translateY(-60px);
+}
+
+#card-3 {
+  z-index: 504;
+}
+#card-3.slide-out {
+  -ms-transform: translateY(-70px);
+  /* IE 9 */
+  -webkit-transform: translateY(-70px);
+  /* Chrome, Safari, Opera */
+  transform: translateY(-70px);
+}
+
+#card-4 {
+  z-index: 503;
+}
+#card-4.slide-out {
+  -ms-transform: translateY(-80px);
+  /* IE 9 */
+  -webkit-transform: translateY(-80px);
+  /* Chrome, Safari, Opera */
+  transform: translateY(-80px);
+}
+
+#card-5 {
+  z-index: 502;
+}
+#card-5.slide-out {
+  -ms-transform: translateY(-90px);
+  /* IE 9 */
+  -webkit-transform: translateY(-90px);
+  /* Chrome, Safari, Opera */
+  transform: translateY(-90px);
+}
+
+#card-6 {
+  z-index: 501;
+}
+#card-6.slide-out {
+  -ms-transform: translateY(-100px);
+  /* IE 9 */
+  -webkit-transform: translateY(-100px);
+  /* Chrome, Safari, Opera */
+  transform: translateY(-100px);
 }
 
 #case {
   opacity: 1.0;
   width: calc(200px + 11px);
   height: auto;
-  /* top: calc(calc(50% - 402px/2) - 7px); case on element */
-  top: calc(100vh - 7px);
+  position: absolute;
+  /* top: calc(calc(50vh - 318px/2) - 7px); case on element */
+  top: calc(calc(50vh - 318px/2) - 7px + 100vh);
   left: calc(50% - 100px - 6px);
+  z-index: 507;
   /*background-image: url('../../assets/img/iphone.png');*/
 }
 #case img {
   width: 100%;
+}
+#case.covered {
+  position: fixed;
+  top: calc(calc(50vh - 318px/2) - 7px);
 }
