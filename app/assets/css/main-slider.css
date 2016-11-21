@@ -78,7 +78,7 @@ element.other-cards.covered {
 element.other-cards.covered.toBottom {
   position: absolute;
   top: inherit;
-  bottom: calc(calc(50vh - calc(477px/2)/2));
+  bottom: calc(calc(50vh - 477px/2) - 5px);
 }
 
 #card-1 {

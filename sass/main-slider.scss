@@ -144,7 +144,9 @@ element.other-cards {
         &.toBottom {
             position: absolute;
             top: inherit;
-            bottom: $toBottomCardsMobile;
+            // bottom: $toBottomCardsMobile;
+            bottom: $caseTopFixed;
+
         }
     }
 
