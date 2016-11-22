@@ -15,6 +15,16 @@
   <button onclick="prevStage()">prevStage</button>
 </div>
 
+<nav>
+  <ul class="horizontal">
+    <li><a href="#walletAnimationContainer">home</a></li>
+    <li><a href="#product-pros">product-pros</a></li>
+    <li><a href="#situations-gallery">situations-gallery</a></li>
+    <li><a href="#order">order</a></li>
+
+
+  </ul>
+</nav>
 <div class="slide full-page active" id="walletAnimationContainer">
   <div class="slider-main js-on" id="sliderContainer">
 
@@ -53,10 +63,53 @@
   </div>
 </div>
 
-<div class="slide full-page active">
-  <h2>hello</h2>
+
+<div class="slide page-50 active center-content" id="product-pros">
+  <h2>About product</h2>
+  <ul class="horizontal">
+    <li>
+      <div class="icon-container">
+        <img src="assets/img/icon.png">
+      </div>
+      <p>up to 6</p>
+    </li>
+    <li>
+      <div class="icon-container">
+        <img src="assets/img/icon.png">
+      </div>
+      <p>size</p>
+      </li>
+    <li>
+      <div class="icon-container">
+        <img src="assets/img/icon.png">
+      </div>
+      <p>rfid safe</p>
+      </li>
+  </ul>
+</div>
+
+<div class="slide full-page" id="situations-gallery">
+  <h2>situations-gallery</h2>
+
+  <div class="slides-container">
+    <ul class="pager">
+      <li><button onClick="activateSlide(0)">#1</button></li>
+      <li><button onClick="activateSlide(1)">#2</button></li>
+      <li><button onClick="activateSlide(2)">#3</button></li>
+    </ul>
+    <ul class="slides-list">
+      <li id="slide-1" class="slide active"></li>
+      <li id="slide-2"></li>
+      <li id="slide-3"></li>
+    </ul>
+  </div>
+</div>
+
+<div class="slide page-50 active center-content" id="order">
+  <h2>Order</h2>
 </div>
 
 <script src="js/wallet-animation.js"></script>
+<script src="js/situations-gallery.js"></script>
 </body>
 </html>

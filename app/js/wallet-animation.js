@@ -12,6 +12,8 @@
         'currentStage' : null
     }
 
+    var currentStage = 0;
+
     var animationContainer = document.getElementById('sliderContainer');
     //console.log('animationContainer', animationContainer);
 
@@ -245,42 +247,40 @@
                     attachAllToBottom();
                 }
                 break;
+            default :
+                console.log('scroll action, dont know what to do', model);
+                if (!model.currentStage) {
+                    makeCardsCovered();
+                    makeWalletFixed();
+                    attachAllToBottom();
+                }
+
         }
 
-        ////console.log('scroll event', event);
-        /*
-        if( shouldCoverCards() ){
-            makeCardsCovered();
-            makeWalletFixed();
-        } else if(shouldFixCards()){
-            makeCardsFixed();
-            makeWalletMoving();
-        }
-        */
     });
 
-    document.body.addEventListener('keydown',function keyDownHandler(event){
-        ///*console.log('keydown handler', event)*/
-        var keyCode = event.keyCode;
+    // document.body.addEventListener('keydown',function keyDownHandler(event){
+    //     ///*console.log('keydown handler', event)*/
+    //     var keyCode = event.keyCode;
 
-        switch (keyCode) {
-            case 37 : //left
-                //console.log('move left');
-                moveLeft();
-                break;
-            case 38 : //up
-                break;
-            case 39 : //right
-                moveRight();
-                //console.log('move right');
-                break;
-            case 40 : //bottom
-                break;
-        }
-    });
+    //     switch (keyCode) {
+    //         case 37 : //left
+    //             //console.log('move left');
+    //             moveLeft();
+    //             break;
+    //         case 38 : //up
+    //             break;
+    //         case 39 : //right
+    //             moveRight();
+    //             //console.log('move right');
+    //             break;
+    //         case 40 : //bottom
+    //             break;
+    //     }
+    // });
 
 
-    var currentStage = 0;
+
     window.nextStage = function nextStage(){
         console.log('next stage clicked');
         currentStage++

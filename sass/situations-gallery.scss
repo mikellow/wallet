@@ -1,0 +1,101 @@
+$pagerWidth : 300px;
+
+#situations-gallery {
+    position: relative;
+ .slides-container {
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 100%;
+    height:100%;
+    z-index: 299;
+    overflow: hidden;
+    ul.pager{
+        position: absolute;
+        left:calc(50% - #{$pagerWidth/2});
+        bottom:150px;
+
+        padding: 0px;
+        margin:0px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items : center;
+        width: $pagerWidth;
+        height: 100px;
+        z-index: 300;
+
+        background-color: rgba(255, 255, 255, 0.3);
+        list-style: none;
+
+        button {
+            display: block;
+            width: 70px;
+            height: 70px;
+
+            border: 1px solid black;
+            background-color: white;
+
+            &:focus {
+                font-size: 30px;
+                font-weight: heavy;
+            }
+        }
+    }
+    ul.slides-list {
+        position: absolute;
+        left:0px;
+        top:0px;
+        padding: 0px;
+        margin:0px;
+        display: flex;
+        align-content: flex-start;
+        width: 100%;
+        height:100%;
+        list-style: none;
+
+        /* transition: all 2s ease-in; */
+
+        -webkit-transition: all 1000ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
+           -moz-transition: all 1000ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
+             -o-transition: all 1000ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
+                transition: all 1000ms cubic-bezier(0.860, 0.000, 0.070, 1.000); /* easeInOutQuint */
+
+        -webkit-transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+           -moz-transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+             -o-transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+                transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000); /* easeInOutQuint */
+
+        li {
+            display: block;
+            width: 100vw;
+            height: 100%;
+            flex: none ;
+
+            img {
+                /*width: 100vw;*/
+                display: block;
+                height: 100%;
+                width: auto;
+            }
+        }
+
+    }
+
+    #slide-1 {
+        background-image: url('../img/dude-1.jpg');
+        background-size: cover;
+        background-position: center center;
+    }
+    #slide-2 {
+        background-image: url('../img/dude-2.jpg');
+        background-size: cover;
+        background-position: center center;
+    }
+    #slide-3 {
+        background-image: url('../img/dude-3.jpg');
+        background-size: cover;
+        background-position: center center;
+    }
+ }
+}

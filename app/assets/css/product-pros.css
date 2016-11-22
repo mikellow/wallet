@@ -1,0 +1,11 @@
+#product-pros h2 {
+  text-align: center;
+}
+#product-pros p {
+  text-align: center;
+  font-size: 28px;
+  font-weight: heavy;
+}
+#product-pros .icon-container img {
+  width: 100px;
+}

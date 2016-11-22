@@ -8,10 +8,14 @@
 
 }
 .slider-main {
-    background-image: url('../../assets/img/footer_lodyas.png');
+    // background-image: url('../../assets/img/footer_lodyas.png');
+    // background-image: url('../../assets/img/stardust.png');
+    background-image: url('../../assets/img/zwartevilt.png');
+
     background-attachment: fixed;
     background-position: center center;
-    background-size: 1000px 1000px;
+    background-size: 400px 400px;
+    // background-size:  cover;
     background-repeat: repeat;
     background-color: rgba(0, 0, 0, 0.6);
 
@@ -49,8 +53,12 @@ $mainCardHeight: 318px;
 $mainCardWidth: 200px;
 */
 
-$mainCardHeight: 477px;
-$mainCardWidth: 300px;
+// $mainCardHeight: 477px;
+// $mainCardWidth: 300px;
+
+
+$mainCardHeight: 457px;
+$mainCardWidth: 200px;
 
 $mainCardLeftPos : calc(30% - #{$mainCardWidth}/2);
 
@@ -62,7 +70,7 @@ $caseTop: calc(#{$iphoneTop} - 5px + 100vh);
 $caseTopFixed: calc(#{$iphoneTop} - 5px);
 
 $caseWidth : calc(#{$mainCardWidth} + 40px);
-$caseHeight : 685px;
+$caseHeight : 485px;
 $caseLeftPos : calc(#{$mainCardLeftPos} - 16px);
 
 
@@ -77,7 +85,7 @@ $cardSlideOutHover : $card1SlideOut - 150px;
 
 
 $toBottomCards : calc(#{$iphoneTop});
-$toBottomCase : calc(#{$iphoneTop} - 200px);
+$toBottomCase : calc(#{$iphoneTop});
 
 // $toBottomCardsMobile : $toBottomCards;
 
@@ -101,7 +109,7 @@ $cardsInsideWalletTopMobile : calc(#{$mainCardTopPosMobile} + 100vh);
 $caseTopFixedMobile : calc(#{$mainCardTopPosMobile} - 5px);
 // $toBottomCaseMobile :  calc(#{$mainCardTopPosMobile} - 200px);
 $toBottomCardsMobile : calc(#{$mainCardTopPosMobile});
-$toBottomCaseMobile :  calc(#{$mainCardTopPosMobile} - 100px);
+$toBottomCaseMobile :  calc(#{$mainCardTopPosMobile});
 
 element.card {
     position: absolute;
@@ -219,7 +227,7 @@ element.other-cards {
 }
 
 #case {
-    opacity: 0.90;
+    opacity: 0.99;
     width: $caseWidth;
     height: $caseHeight;
 
@@ -250,7 +258,7 @@ element.other-cards {
 }
 
 
-@media all and (max-width: 699px) {
+@media all and (max-width: 1368px) {
     element.card,
     element.other-cards {
         position: absolute;

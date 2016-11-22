@@ -1,5 +1,8 @@
 @import "variables.scss";
 @import "main-slider.scss";
+@import "product-pros.scss";
+@import "situations-gallery.scss";
+
 
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
@@ -33,6 +36,22 @@ h2, h3 {
     margin: 0px;
 }
 
+nav {
+  padding: 10px;
+  position: fixed;
+  top:0px;
+  left:0px;
+  width: 100%;
+  z-index: 999;
+  // background-color: rgb(96, 115, 156);
+  background-color : white;
+  a {
+    color: black;
+    font-size: 20px;
+    margin:20px;
+  }
+}
+
 .font {
     &-white {
         color: $white;
@@ -62,4 +81,38 @@ h2, h3 {
         min-height: 100%;
         height: auto;
     }
+
+    &.page-25 {
+        min-height: 25%;
+        height: auto;
+    }
+
+    &.page-50 {
+        min-height: 50%;
+        height: auto;
+    }
+}
+
+.d-none {
+  display: none;
+}
+
+ul.horizontal {
+  margin: 0px;
+  padding:0px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  ul.horizontal {
+    width: 100%;
+  }
 }
